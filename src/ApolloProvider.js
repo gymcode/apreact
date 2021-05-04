@@ -12,7 +12,7 @@ const HttpLink = createHttpLink({
 
 const client = new ApolloClient({
     link: HttpLink, 
-    cache: InMemoryCache
+    cache: new InMemoryCache()
 })
 
 export default (
