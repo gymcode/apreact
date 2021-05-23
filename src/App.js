@@ -1,13 +1,12 @@
 import React from 'react'
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import 'semantic-ui-css/semantic'
+import 'semantic-ui-css/semantic.min.css'
 
 // importing component
-import LoginComponent from 
-const LoginComponent = React.lazy(()=> import('./pages/Authentication/Login'))
-const RegisterComponent = React.lazy(()=> import('./pages/Authentication/Registration'))
-const HomeComponent = React.lazy(()=> import('./pages/Home'))
+import LoginComponent from './pages/Authentication/Login'
+import RegisterComponent from './pages/Authentication/Registration'
+import HomeComponent from './pages/Home'
 
 function App() {
   return (

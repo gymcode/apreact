@@ -3,7 +3,7 @@ import React from 'react';
 const MainComponent = () =>{
     return(
         <div>
-            this is homeg
+            this is homegn jknkjknkj
         </div>
     )
 }
