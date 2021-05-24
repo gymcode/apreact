@@ -1,11 +1,12 @@
 import React from 'react'; 
 import {Menu, Segment} from 'semantic-ui-react';  
+import {Link} from 'react-router-dom'
 
 const MenuBar = ()=>{
 
     const [activeItem, setActiveItem] = React.useState('')
 
-    const handleClick = (()=> console.log("jjjjjjj"))
+    const handleClick = ((e, {name})=> setActiveItem(name))
 
     return (
         <div>
@@ -13,18 +14,24 @@ const MenuBar = ()=>{
                 <Menu.Item 
                     name='home' 
                     active={activeItem === "home"}
-                    onClick = {}
+                    onClick = {handleClick}
+                    as = {Link}
+                    to = {'/'}
                     />
                 <Menu.Menu position="right">
                     <Menu.Item 
                         name='login' 
                         active={activeItem === "login"}
-                        
+                        onClick = {handleClick}
+                        as  = {Link}
+                        to = {'/login'}
                         />
                     <Menu.Item 
                         name='register' 
                         active={activeItem === "register"}
-                        
+                        onClick = {handleClick}
+                        as = {Link}
+                        to = {'/register'}
                          />
                 </Menu.Menu>
             </Menu>
