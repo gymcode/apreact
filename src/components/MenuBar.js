@@ -5,28 +5,26 @@ const MenuBar = ()=>{
 
     const [activeItem, setActiveItem] = React.useState('')
 
-    function handleClick(e, {name}){ 
-
-    }
+    const handleClick = (()=> console.log("jjjjjjj"))
 
     return (
         <div>
             <Menu pointing secondary>
                 <Menu.Item 
                     name='home' 
-                    active={setActiveItem('home')}
-                    onClick={handleClick}
+                    active={activeItem === "home"}
+                    onClick = {}
                     />
                 <Menu.Menu position="right">
                     <Menu.Item 
                         name='login' 
-                        active={setActiveItem('login')}
-                        onClick={handleClick}
+                        active={activeItem === "login"}
+                        
                         />
                     <Menu.Item 
                         name='register' 
-                        active={setActiveItem('register')}
-                        onClick={handleClick}
+                        active={activeItem === "register"}
+                        
                          />
                 </Menu.Menu>
             </Menu>
