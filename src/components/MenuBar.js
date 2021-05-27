@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 const MenuBar = ()=>{
 
     const pathname = window.location.pathname; 
-    console.log(pathname.substr(1))
 
     const path = pathname === "/" ? "home" : pathname.substr(1)
     const [activeItem, setActiveItem] = React.useState(path)
