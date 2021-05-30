@@ -1,10 +1,11 @@
 import React from 'react'; 
-import {Grid, Image} from 'semantic-ui-react'
+import {Grid} from 'semantic-ui-react'
 import {gql, useQuery} from "@apollo/client"
+import PostCards from '../../components/PostCards'
 
 const GetPost = gql 
 `
-    query{
+    {
         getPosts {
             id
             body
@@ -24,9 +25,9 @@ const GetPost = gql
 
 const MainComponent = () =>{
 
-    const {loading, data: {getPosts}, error} = useQuery(GetPost)
+    const {loading, data: {getPosts: posts} } = useQuery(GetPost)
 
-    console.log(getPosts)
+    console.log(posts)
     return(
         <div style={{paddingTop: 30}}>
             <Grid columns={3} divided>
@@ -37,11 +38,11 @@ const MainComponent = () =>{
                 </Grid.Row>
                 <Grid.Row>
                   {loading ? (
-                      <h1>Loading posts ... </h1>
+                      <h1>Loading posts .... </h1>
                   ) : (
-                     getPosts && getPosts.map((items)=> (
+                     posts && posts.map((items)=> (
                         <Grid.Column>
-                            <h2>{items.body}</h2>
+                            <PostCards username={items.username} body={items.body} />
                         </Grid.Column>
                      ))
                   )}
